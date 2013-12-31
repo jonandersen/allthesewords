@@ -3,7 +3,14 @@
         <li><a href="#" data-filter="*">Show all</a></li>
         <li class="divider"></li>
         {{#each tags}}
-            <li><a href="#" data-filter=".{{tag}}">{{tag}}</a></li>
+            <li>
+                <a href="#" data-filter=".{{tag}}">{{tag}}</a>
+                {{#if currentUser}}
+                    {{#if isEditing}}
+                        <a href="#" class="remove"><span class="glyphicon glyphicon-remove"></span></a>
+                    {{/if}}
+                {{/if}}
+            </li>
         {{/each}}
     </ul>
 </template>

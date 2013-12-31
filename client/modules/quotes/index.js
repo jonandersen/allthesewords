@@ -21,7 +21,7 @@ QuotesIndexController = RouteController.extend({
 
 Template.quoteItem.events({ 'click .remove': function (e) {
         e.preventDefault();
-        if (confirm("Press a button")){
+        if (confirm("Do you want to remove " + this.quote + "?")){
             var currentPostId = this._id;
             Quotes.remove(currentPostId);
         }
