@@ -1,0 +1,90 @@
+/* CSS declarations go here */
+#main {
+  background-color: #ffffff;
+}
+
+#navigation li {
+  display:inline;
+}
+
+.quoteItem {
+  background-color: rgb(255, 255, 255);
+  font-family: 'Arial', 'Helvetica', sans-serif, sans-serif;
+  color: rgb(0,0,0);
+  //border: 5px solid black;
+  padding-top: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 26px;
+  text-align: left;
+  width: 300px;
+
+  span {
+    float:right;
+    padding-bottom: 30px;
+    margin-bottom: 15px;
+  }
+  .author{
+    padding-top: 10px;
+    font-size: 18px;
+    text-align: right;
+  }
+
+  .tags{
+    font-style: italic;
+    padding-top: 10px;
+    text-align: left;
+    font-size: 14px;
+  }
+}
+
+#quotes {
+  width: 100%;
+}
+
+.tags {
+  a:hover{
+   color: #FB4;;
+  }
+  a {
+    color: #505050;
+  }
+}
+
+/**** Isotope Filtering ****/
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  -ms-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+  -moz-transition-property: height, width;
+  -ms-transition-property: height, width;
+  -o-transition-property: height, width;
+  transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property:    -moz-transform, opacity;
+  -ms-transition-property:     -ms-transform, opacity;
+  -o-transition-property:      -o-transform, opacity;
+  transition-property:         transform, opacity;
+}

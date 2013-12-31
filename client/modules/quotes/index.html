@@ -1,0 +1,29 @@
+<template name="quotesIndex">
+    <div id="quotes">
+        {{#constant}}
+            {{#each quotes}}
+                {{>quoteItem}}
+            {{/each}}
+        {{/constant}}
+
+    </div>
+</template>
+
+<template name="quoteItem">
+    <div class="quoteItem {{ArrayConvert tags}}" id="{{_id}}">
+        {{#if currentUser}}
+            {{#if isEditing}}
+                <a href="#" class="remove"><span class="glyphicon glyphicon-remove"></span></a>
+            {{/if}}
+        {{/if}}
+        <div class="quote">
+            {{quote}}
+        </div>
+        <div class="author">
+            - {{author}}
+        </div>
+        <div class="tags">
+            {{{IsotopeFilter tags}}}
+        </div>
+    </div>
+</template>

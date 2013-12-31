@@ -1,0 +1,57 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "bootstrap-3": {},
+      "accounts-ui-bootstrap-3": {},
+      "iron-router": {},
+      "iron-router-progress": {},
+      "fake": {},
+      "isotope": {},
+      "chosen-package": {},
+      "select2": {}
+    },
+    "packages": {
+      "bootstrap-3": {
+        "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
+        "tag": "v0.3.7",
+        "commit": "5dd0d142c870647b910be80bc777b96f0dd45e5e"
+      },
+      "accounts-ui-bootstrap-3": {
+        "git": "https://github.com/mangasocial/meteor-accounts-ui-bootstrap-3.git",
+        "tag": "v0.2.4",
+        "commit": "cdbd20eb065310c0cc302bbd5f22e5b2121c769a"
+      },
+      "iron-router": {
+        "git": "https://github.com/EventedMind/iron-router.git",
+        "tag": "v0.6.1",
+        "commit": "4e1ee0581d68bff422a915dacb0bd30eae10fe08"
+      },
+      "iron-router-progress": {
+        "git": "https://github.com/Multiply/iron-router-progress.git",
+        "tag": "v0.2.0",
+        "commit": "ce730d1d26feadb7c75ea25f22c5bfdb0c549a8b"
+      },
+      "fake": {
+        "git": "https://github.com/subhog/meteor-fake.git",
+        "tag": "v0.3.4",
+        "commit": "e5393ddad6fbee5638e5c430666693828b403abc"
+      },
+      "isotope": {
+        "git": "https://github.com/digioak/meteor-isotope.git",
+        "tag": "v0.0.3",
+        "commit": "6fa8d0cd5ad50ea2292f2ce03ea619adc6c13c58"
+      },
+      "chosen-package": {
+        "git": "https://github.com/Ore4444/chosen-package.git",
+        "tag": "v0.11.1",
+        "commit": "8d1a748bafaae8b6005a979ab7261ac14ff38052"
+      },
+      "select2": {
+        "git": "https://github.com/nate-strauser/meteor-select2.git",
+        "tag": "v3.4.5",
+        "commit": "4a8d05582b949a14f0ee217c185166abbf112822"
+      }
+    }
+  }
+}

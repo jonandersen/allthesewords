@@ -1,0 +1,9 @@
+<template name="filtersList">
+    <ul class="dropdown-menu" id="filters">
+        <li><a href="#" data-filter="*">Show all</a></li>
+        <li class="divider"></li>
+        {{#each tags}}
+            <li><a href="#" data-filter=".{{tag}}">{{tag}}</a></li>
+        {{/each}}
+    </ul>
+</template>
