@@ -12,7 +12,7 @@ Template.filtersList.events({ 'click': function (e) {
 
 Template.filtersList.events({ 'click .remove': function (e) {
     e.preventDefault();
-    if (confirm("Do you want to remove " + this.tag + "?")){
+    if (confirm("Do you want to remove " + this.tag + "?")) {
         var currentTagId = this._id;
         Tags.remove(currentTagId);
     }
