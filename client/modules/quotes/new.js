@@ -1,7 +1,11 @@
 Template.quoteNew.events({ 'click .modal-footer': function (e) {
     e.preventDefault();
-    if($(e.target).hasClass("save")){
-        var tags = $(".modal-body").find('[name=tags]').val().split(",")
+    if ($(e.target).hasClass("save")) {
+        var tags = [];
+
+        $("#tags-new option:selected").each(function () {
+            tags.push($(this).val());
+        });
 
         var quote = {
             quote: $(".modal-body").find('[name=quote]').val(),
@@ -14,7 +18,7 @@ Template.quoteNew.events({ 'click .modal-footer': function (e) {
 }
 });
 
-Template.quoteNew.rendered= function (){
+Template.quoteNew.rendered = function () {
     $(".tags-multiple").select2({
         allowClear: true,
         width: '100%'
@@ -22,7 +26,7 @@ Template.quoteNew.rendered= function (){
 };
 
 Template.quoteNew.helpers({
-    tags: function() {
+    tags: function () {
         return Tags.find();
     }
 });

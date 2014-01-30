@@ -16,12 +16,14 @@
                             <label for="author">Author</label>
                             <input class="form-control" name="author" type="text" value="" placeholder="Author"/>
                         </div>
-                        <select multiple class="tags-multiple" data-placeholder="Select tags">
-                            <option value=""></option>
-                            {{#each tags}}
-                            <option value="{{tag}}">{{tag}}</option>
-                            {{/each}}
-                        </select>
+                        <div id="tags-new">
+                            <select multiple class="tags-multiple" data-placeholder="Select tags">
+                                <option value=""></option>
+                                {{#each tags}}
+                                <option value="{{tag}}">{{tag}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
 
 
 
