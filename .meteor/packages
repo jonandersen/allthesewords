@@ -7,14 +7,15 @@ standard-app-packages
 preserve-inputs
 
 bootstrap-3
-accounts-ui-bootstrap-3
-iron-router
-iron-router-progress
 fake
 
 less
 
-isotope
 accounts-password
 
 select2
+ian:accounts-ui-bootstrap-3
+jquery
+iron:router
+underscore
+

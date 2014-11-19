@@ -1,25 +1,4 @@
-QuotesIndexController = RouteController.extend({
-    template: 'quotesIndex',
-
-    before: function () {
-    },
-
-    after: function () {
-    },
-
-    waitOn: function () {
-        return [Meteor.subscribe('quotes'), Meteor.subscribe('tags')];
-    },
-
-    data: function () {
-        return {
-            quotes: Quotes.find(),
-            tags: Tags.find()
-        };
-    }
-});
-
-Template.quoteItem.events({ 'click .remove': function (e) {
+Template.quoteItem.events({ 'submit .remove': function (e) {
         e.preventDefault();
         if (confirm("Do you want to remove " + this.quote + "?")){
             var currentPostId = this._id;
@@ -28,12 +7,18 @@ Template.quoteItem.events({ 'click .remove': function (e) {
     }
 });
 
+Template.quotesIndex.lastUpdate = function () {
+    return Session.get('lastUpdate');
+};
 
-Template.quoteItem.rendered = function () {
+
+Template.quotesIndex.rendered = function () {
     var container = $("#quotes");
-    if (!container.hasClass("isotope") && (container.find(".quoteItem").length == Quotes.find().count())) {
+	console.log(container.find(".quoteItem").length);
+	console.log(Quotes.find().count());
+    if (!container.hasClass("isotope") && (container.find(".quoteItem").length === Quotes.find().count())) {
         // This seems to run once per block. Wasteful.
-        // console.log("Initialize isotope");
+        console.log("Initialize isotope");
         // Initialize isotope
 
         container.isotope({

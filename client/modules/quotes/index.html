@@ -1,11 +1,9 @@
 <template name="quotesIndex">
     <div id="quotes">
-        {{#constant}}
-            {{#each quotes}}
+            {{#each quotes}} 
+		    	<div style="visibility:hidden;">{{lastUpdate}}</div>
                 {{>quoteItem}}
-            {{/each}}
-        {{/constant}}
-
+            {{/each}}		
     </div>
 </template>
 

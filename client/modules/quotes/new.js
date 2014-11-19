@@ -1,29 +1,34 @@
-Template.quoteNew.events({ 'click .modal-footer': function (e) {
-    e.preventDefault();
-    if ($(e.target).hasClass("save")) {
-        var tags = [];
-
-        $("#tags-new option:selected").each(function () {
-            tags.push($(this).val());
-        });
-
+Template.quoteNew.events({ 'submit form#createQuote': function (e) {
+	    e.preventDefault();
+        var tags = $("#tags").val().split(',');
+	
+		tags = _.map(tags, function(tag){
+			return tag.toLowerCase().trim();
+		});
+	
+		_.each(tags, function(tag) {
+			if(!Tags.findOne({tag: tag})){
+				Tags.insert({tag: tag});
+			}	
+		});
+	
         var quote = {
-            quote: $(".modal-body").find('[name=quote]').val(),
-            author: $(".modal-body").find('[name=author]').val(),
+            quote: $("#quote").val(),
+            author: $("#author").val(),
             tags: tags
         };
-        quote._id = Quotes.insert(quote);
-        Router.go('/');
+        Quotes.insert(quote);
+	    Session.set('lastUpdate', new Date() );	
+		$("#quote").val("");
+		$("#author").val("");
+		$("#tags").val("");
+				
+	    $('#quotes').isotope('reloadItems');
+		
     }
-}
 });
 
-Template.quoteNew.rendered = function () {
-    $(".tags-multiple").select2({
-        allowClear: true,
-        width: '100%'
-    });
-};
+
 
 Template.quoteNew.helpers({
     tags: function () {

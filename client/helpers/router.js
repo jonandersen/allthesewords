@@ -1,13 +1,24 @@
 Router.configure({
-    layoutTemplate: 'layout'
+    layoutTemplate: 'layout',
+	waitOn: function() { 
+		return [Meteor.subscribe('quotes'), Meteor.subscribe('tags')]
+	}
 });
 
-Router.map(function () {
-    this.route('quotesIndex', {
-        path: '/',
-        controller: QuotesIndexController,
-        load: function () {
-            Session.set('active', "quotesIndex");
-        }
-    });
+Router.route('/', {
+  	name: 'quotesIndex',
+	data: function() { return  {
+            quotes: Quotes.find(),
+            tags: Tags.find()
+        };
+    }
 });
+
+Router.route('/add', {
+  	name: 'quoteNew',
+	data: function() { return  {
+            tags: Tags.find()
+        };
+    }
+});
+
